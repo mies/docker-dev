@@ -4,3 +4,6 @@ build:
     - script:
         name: docker build
         code: sudo docker build -t mies/rethinkdb .
+    - script:
+        name: test cluster
+        code: sh run.sh
