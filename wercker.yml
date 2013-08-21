@@ -10,8 +10,4 @@ build:
     - script:
         name: docker logs
         code: |
-              sudo docker ps -a |
-              grep ‘ls /’     | 
-              awk ‘{print $1}’| 
-              head -n 1       | 
-              xargs sudo docker logs
+              sudo docker ps -a | awk '{print $1}' | tail -n 1 | xargs sudo docker logs
