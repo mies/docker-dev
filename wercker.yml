@@ -7,7 +7,7 @@ build:
     - script:
         name: test cluster
         code: sh test.sh
-    -script:
+    - script:
         name: docker logs
         code: |
               sudo docker ps -a | \
