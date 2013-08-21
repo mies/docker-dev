@@ -10,5 +10,5 @@ export SLAVE_FIRST_ID=$(sudo docker run -p 29015 -d mies/rethinkdb rethinkdb --j
 echo $SLAVE_FIRST_ID
 export SLAVE_FIRST_PORT=$(sudo docker port $SLAVE_FIRST_ID 29015)
 echo $SLAVE_FIRST_PORT
-SLAVE_SECOND_ID=$(sudo docker run -d mies/rethinkdb rethinkdb --join $MASTER_IP:$MASTER_PORT --bind all)
+export SLAVE_SECOND_ID=$(sudo docker run -p 29015 -d mies/rethinkdb rethinkdb --join $MASTER_IP:$MASTER_PORT --bind all)
 echo $SLAVE_SECOND_ID
