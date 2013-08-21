@@ -7,3 +7,11 @@ build:
     - script:
         name: test cluster
         code: sh test.sh
+    -script:
+        name: docker logs
+        code: |
+          sudo docker ps -a    | \
+          grep ‘ls /’     | \ 
+          awk ‘{print $1}’| \
+          head -n 1       | \
+          xargs sudo docker logs
